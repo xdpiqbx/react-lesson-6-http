@@ -2,9 +2,7 @@ import { Component } from 'react';
 import PokemonForm from './components/PokemonForm';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// import PokemonForm from './components/PokemonForm';
-// import PokemonInfo from './components/PokemonInfo';
+import PokemonInfo from './components/PokemonInfo';
 
 export default class App extends Component {
   state = {
@@ -19,10 +17,11 @@ export default class App extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div style={{ maxWidth: 1170, margin: '0 auto', padding: 20 }}>
         <PokemonForm onSubmit={this.handleFormSubmit} />
+        <PokemonInfo pokemonName={this.state.pokemonName} />
         <ToastContainer autoClose={2000} />
       </div>
     );
@@ -31,6 +30,9 @@ export default class App extends Component {
 
 //Информация о покемоне
 //https://youtu.be/xoG3l2PgiYY?t=1850
+
+//Pattern стейт машина
+//https://youtu.be/xoG3l2PgiYY?t=3603
 
 // По простому всё выглядит так.
 // export default class App extends Component {
